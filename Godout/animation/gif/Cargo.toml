@@ -1,0 +1,11 @@
+[package]
+name = "gif"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+gdnative = {git = "https://github.com/godot-rust/godot-rust"}
+gif = {git = "https://github.com/image-rs/image-gif"}

@@ -1,0 +1,6 @@
+[workspace]
+members = [
+  "godout",
+  "animation/gif",
+  "animation/webp",
+]
