@@ -10,3 +10,4 @@ data_*/
 # Rust ignores
 Cargo.lock
 Godout/target/
+Godout/out
