@@ -1,25 +1,29 @@
 use gdnative::prelude::*;
 use webp_animation::prelude::*;
 
-struct FrameData (Vec<u8>, i32);
+struct FrameData(Vec<u8>, i32);
 
 #[derive(NativeClass)]
 #[inherit(Reference)]
 #[no_constructor]
 pub struct WebpEncoder {
     dimentions: (u32, u32),
-    frame_data: Vec<FrameData>
+    frame_data: Vec<FrameData>,
 }
 
 #[methods]
 impl WebpEncoder {
     pub fn new(dimentions: (u32, u32)) -> WebpEncoder {
-        WebpEncoder { dimentions, frame_data: vec![] }
+        WebpEncoder {
+            dimentions,
+            frame_data: vec![],
+        }
     }
 
     #[export]
-    fn add_frame(&mut self, _owner: &Reference, image_data: PoolArray<u8>, delay: i32) {
-        self.frame_data.push(FrameData(image_data.to_vec(), delay));
+    fn add_frame(&mut self, _owner: &Reference, image_data: PoolArray<u8>, delay_millis: i32) {
+        self.frame_data
+            .push(FrameData(image_data.to_vec(), delay_millis));
     }
 
     #[export]

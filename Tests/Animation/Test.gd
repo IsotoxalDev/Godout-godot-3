@@ -1,7 +1,7 @@
-extends Node
+extends Reference
 
-func _test():
+static func _test():
 	pass
 
-func test_gif() -> int:
+func test_gif():
 	pass

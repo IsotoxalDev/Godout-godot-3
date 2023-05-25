@@ -1,5 +1,5 @@
 [package]
-name = "gif"
+name = "godout-gif"
 version = "0.1.0"
 edition = "2021"
 
@@ -7,5 +7,5 @@ edition = "2021"
 crate-type = ["cdylib"]
 
 [dependencies]
-gdnative = {git = "https://github.com/godot-rust/godot-rust"}
+gdnative = "0.11.3"
 gif = {git = "https://github.com/image-rs/image-gif"}

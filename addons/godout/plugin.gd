@@ -16,9 +16,7 @@ func _enter_tree():
 			var enter = "func _enter_tree():"
 			var out = sub_dir.get_next()
 			while out != "":
-				godout_script += "const %s_%s = preload(\"%s/%s/%s.gdns\")\n" % [file_name, out, curr_dir, out, out]
-				enter += "\n\t%s[\"%s\"] = %s_%s.new()" % [file_name, out, file_name, out]
-#				enter += "\n\tnode = Node.new()\n\tnode.set_script(%s_%s)\n\tadd_child(node)\n\t%s.%s = node" % [file_name, out, file_name, out]
+				enter += "\n\t%s[\"%s\"] = load(\"%s/%s/%s.gdns\").new()" % [file_name, out, curr_dir, out, out]
 				out = sub_dir.get_next()
 			godout_script += "var %s = {}\n%s" % [file_name, enter]
 			var script = File.new()
