@@ -31,8 +31,8 @@ impl WebpEncoder {
         let mut encoder = Encoder::new(self.dimentions).unwrap();
         let mut time: i32 = 0;
         for data in &mut self.frame_data {
-            time += data.1;
             encoder.add_frame(&data.0[..], time).unwrap();
+            time += data.1;
         }
         let data = encoder.finalize(time).unwrap();
         PoolArray::from_vec(data.to_vec())
