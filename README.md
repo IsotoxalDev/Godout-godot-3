@@ -1,3 +1,5 @@
+> This repository is being archived in favor of a 4.0 gdextension version
+
 # Godout
 Godout is an addon that hopes to package all kinds of exports under one repository.
 
